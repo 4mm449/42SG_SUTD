@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:50:23 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/12 12:38:52 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/13 09:29:59 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	t_len = src_len + dst_len;
 	cpy_len = size - dst_len - 1;
 	if (size <= dst_len)
-		return t_len + size;
+		return (t_len + size);
 	if (cpy_len > src_len)
 		cpy_len = src_len;
 	ft_memcpy(dst + dst_len, src, cpy_len);
