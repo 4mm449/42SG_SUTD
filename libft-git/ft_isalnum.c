@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 10:22:02 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/07 13:03:58 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:30:28 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -21,7 +21,7 @@ int	ft_isalnum(int c)
 		return (0);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%d", ft_isalnum('9'));
-}
+}*/

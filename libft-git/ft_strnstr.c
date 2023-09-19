@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 12:19:09 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/19 15:03:36 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:08:01 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (NULL);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 #include <time.h>
 
@@ -140,5 +140,4 @@ int main() {
     }
 
     return 0;
-}
-
+}*/
