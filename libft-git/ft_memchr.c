@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:25:01 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/13 14:43:54 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/20 12:36:25 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	const char	*result;
 
 	result = (ft_strchr((const char *)s, c));
-	if (result && (size_t)(result - ((const char *)s) < n))
+	if (result && ((size_t)(result - ((const char *)s)) < n))
 	{
 		return ((void *)result);
 	}

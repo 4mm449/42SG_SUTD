@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 08:48:34 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/11 09:59:52 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/20 11:20:23 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;
+	if (!dest && !src)
+		return (NULL);
 	while (i < n)
 	{
 		d[i] = s[i];

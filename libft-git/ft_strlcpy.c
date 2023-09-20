@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:22:28 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/13 13:25:56 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:10:31 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	cpy_len;
 
 	src_len = ft_strlen(src);
-	if (src_len > 0)
+	cpy_len = src_len;
+	if (size > 0)
 	{
-		if (size - 1 < src_len)
+		if (cpy_len > size - 1)
 			cpy_len = size - 1;
 		else
 			cpy_len = src_len;

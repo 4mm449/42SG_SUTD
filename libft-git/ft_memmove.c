@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:47:29 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/13 12:51:38 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/20 11:15:07 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,15 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;
+	if (!dest && !src)
+		return (NULL);
 	if (s < d)
 	{
-		i = n - 1;
-		while (i)
+		i = n;
+		while (i > 0)
 		{
-			d[i] = s[i];
 			i -= 1;
+			d[i] = s[i];
 		}
 	}
 	else

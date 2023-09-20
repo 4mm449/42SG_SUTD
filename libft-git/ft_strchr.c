@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:37:28 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/13 14:27:27 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/20 12:45:47 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
-			return ((char *)s);
+			return ((char *)&s[i]);
 		s += 1;
 	}
+	if (c == 0)
+		return ((char *)&s[i]);
 	return (NULL);
 }
 

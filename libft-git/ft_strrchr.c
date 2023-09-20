@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 09:40:13 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/13 14:49:52 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/20 12:41:38 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,12 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len_s;
-	size_t	i;
+	int	i;
 
-	len_s = ft_strlen(s);
-	i = len_s - 1;
-	while (i < len_s)
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
 		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		if (i == 0)
 			return ((char *)&s[i]);
 		i -= 1;
 	}
