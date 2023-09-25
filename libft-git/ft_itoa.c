@@ -6,60 +6,65 @@
 /*   By: aibn-muh <aibn-muh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 19:26:21 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/23 19:26:23 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/25 11:14:48 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
-static int  c_digits(int n)
+static int	c_digits(long n)
 {
-    int count;
+	int	count;
 
-    count = 0;
-    if(n == 0)
-        return (1);
-    if(n < 0)
-    {
-        count += 1;
-        n = -n;
-    }
-    while (n > 0)
-    {
-        count += 1;
-        n /= 10;
-    }
-    return (count);
+	count = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		count += 1;
+		n = -n;
+	}
+	while (n > 0)
+	{
+		count += 1;
+		n /= 10;
+	}
+	return (count);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    int    i;
-    int    digits;
-    int    sign;
-    char    *result;
+	int		i;
+	int		digits;
+	int		sign;
+	char	*result;
 
-    digits = c_digits(n);
-    i = digits - 1;
-    sign = 0;
-    if (n < 0)
-    {
-        sign = 1;
-        n = -n;
-    }
-    result = (char *)malloc(sizeof(char) * (digits + 1));
-    if (result == NULL)
-        return (NULL);
-    if(sign)
-        result[0] = '-';
-    do
-    {
-        result[i] = (n % 10) + '0';
-        n /= 10;
-        i -= 1;
-    } while (n > 0);
-    result[digits] = '\0';
-    return (result);
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	digits = c_digits(n);
+	i = digits - 1;
+	sign = 0;
+	if (n < 0)
+	{
+		sign = 1;
+		n = -n;
+	}
+	result = (char *)malloc(sizeof(char) * (digits + 1));
+	if (result == NULL)
+		return (NULL);
+	if (sign)
+		result[0] = '-';
+	if (c_digits(n) == 1)
+		result[i] = '0';
+	while (n > 0)
+	{
+		result[i] = (n % 10) + '0';
+		n /= 10;
+		i -= 1;
+	}
+	result[digits] = '\0';
+	return (result);
 }
 
 /*#include <stdio.h>
