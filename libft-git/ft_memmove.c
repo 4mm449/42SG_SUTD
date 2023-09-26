@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:47:29 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/20 11:15:07 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/26 12:04:30 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,52 +14,30 @@
 #include <stdio.h>
 #include <string.h>
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t 		i;
-	unsigned char	*s;
-	unsigned char	*d;
+	size_t	i;
 
 	i = 0;
-	s = (unsigned char *)src;
-	d = (unsigned char *)dest;
 	if (!dest && !src)
 		return (NULL);
-	if (s < d)
+	if ((unsigned char *)src < (unsigned char *)dest)
 	{
 		i = n;
 		while (i > 0)
 		{
 			i -= 1;
-			d[i] = s[i];
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		}
 	}
 	else
 	{
 		i = 0;
-		while(i < n)
+		while (i < n)
 		{
-			d[i] = s[i];
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 			i += 1;
 		}
 	}
 	return (dest);
 }
-
-/*int	main() 
-{
-    char str[] = "Ammaar";
-    char str1[] = "Transform";
-    char str2[] = "Ammaar";
-    char str3[] = "Transform";
-
-    // Overlapping copy within the same string
-    ft_memmove(str1, str1 + 2, 4);
-    memmove(str1, str1 + 2, 4);
-
-    // Print the modified string
-    printf("Modified string: %s\n", str1);
-    printf("Modified string: %s\n", str1);
-
-    return 0;
-}*/
