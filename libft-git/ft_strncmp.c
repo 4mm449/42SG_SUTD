@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:41:53 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/13 12:49:17 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/25 20:02:32 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (i < n && (s1[i] != '\0' && s2[i] != '\0'))
 	{
 		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+			return ((int)((unsigned char)s1[i] - (unsigned char)s2[i]));
 		i += 1;
 	}
 	if (i == n || (s1[i] == '\0' && s2[i] == '\0'))
 		return (0);
-	return (s1[i] - s2[i]);
+	return ((int)((unsigned char)s1[i] - (unsigned char)s2[i]));
 }
 
 /*int	main() 

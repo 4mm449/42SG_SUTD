@@ -6,7 +6,7 @@
 #    By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/13 12:43:11 by aibn-muh          #+#    #+#              #
-#    Updated: 2023/09/25 14:47:13 by aibn-muh         ###   ########.fr        #
+#    Updated: 2023/09/25 19:10:09 by aibn-muh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS			=	ft_isalnum.c ft_isprint.c \
 					ft_atoi.c ft_calloc.c ft_strdup.c ft_memchr.c \
 					ft_memcmp.c ft_strnstr.c ft_substr.c ft_strjoin.c \
 					ft_strtrim.c ft_split.c	ft_itoa.c ft_strmapi.c ft_striteri.c \
-					ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c
+					ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 OBJS			= $(SRCS:.c=.o)
 CC				= gcc
 RM				= rm -f

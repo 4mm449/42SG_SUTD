@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 	
 }
 
-#include "libft.h"
+/*#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -97,5 +97,5 @@ int main() {
     free(result);
 
     return 0;
-}
+}*/
 

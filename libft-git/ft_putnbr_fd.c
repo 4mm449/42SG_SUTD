@@ -12,31 +12,32 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include "libft.h"
 
-void	e_cases(int nb)
+void	e_cases(int nb, int fd)
 {
 	if (nb == 0)
 	{
-		ft_putchar_fd("0", fd);
+		ft_putchar_fd('0', fd);
 		return ;
 	}
 	if (nb == -2147483648)
 	{
-		ft_putchar_fd("-2147483648", fd);
+		ft_putstr_fd("-2147483648", fd);
 		return ;
 	}
 }
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	i_to_c[10];
+	int		i_to_c[12];
 	int		index;
 
 	index = 0;
-	e_cases(n);
+	e_cases(n, fd);
 	if (n < 0 && n != -2147483648)
 	{
-		write(1, &"-", 1);
+		ft_putchar_fd('-', fd);
 		n = -n;
 	}
 	while (n > 0)
@@ -47,7 +48,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	while (index > 0)
 	{
-		write(1, &i_to_c[index - 1], 1);
+		ft_putchar_fd(i_to_c[index - 1], fd);
 		index -= 1;
 	}
 }
