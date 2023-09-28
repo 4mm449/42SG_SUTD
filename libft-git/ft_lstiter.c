@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aibn-muh <aibn-muh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 18:52:04 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/28 12:40:51 by aibn-muh         ###   ########.fr       */
+/*   Created: 2023/09/28 11:40:33 by aibn-muh          #+#    #+#             */
+/*   Updated: 2023/09/28 12:46:27 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	count;
-
-	count = 0;
+	if (!lst)
+		return ;
 	while (lst)
 	{
-		count += 1;
+		f(lst->content);
 		lst = lst->next;
 	}
-	return (count);
 }

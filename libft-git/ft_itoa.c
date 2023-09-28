@@ -6,7 +6,7 @@
 /*   By: aibn-muh <aibn-muh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 19:26:21 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/25 23:53:03 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/28 15:12:01 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,16 @@ static int	c_digits(long n)
 	return (count);
 }
 
+char	nbrtochar(char result)
+{
+	        while (n > 0)
+        {
+                result[i] = (n % 10) + '0';
+                n /= 10;
+                i -= 1;
+        }
+        result[digits] = '\0';
+}
 char	*ft_itoa(int n)
 {
 	int		i;

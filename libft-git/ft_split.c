@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:53:15 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/26 12:14:51 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/28 14:51:12 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,11 @@ char	**ft_split(char const *s, char c)
 		if (*s != c)
 		{
 			start = s;
-			while (*s && (*s != c))
+			while (*s != c && *s)
 				s += 1;
-			result[i] = (char *)malloc(sizeof(char) * (s - start + 1));
-			if (!result[i])
+			result[i++] = ft_substr(start, 0, s - start);
+			if (!result[i - 1])
 				return (fail_free(result, i));
-			ft_strlcpy(result[i], start, s - start + 1);
-			i += 1;
 		}
 		else
 			s += 1;
