@@ -6,12 +6,11 @@
 /*   By: aibn-muh <aibn-muh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 19:26:21 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/28 15:12:01 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/29 10:45:13 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 static int	c_digits(long n)
 {
@@ -33,16 +32,21 @@ static int	c_digits(long n)
 	return (count);
 }
 
-char	nbrtochar(char result)
+char	*nbrtochar(char *result, int n, int digits)
 {
-	        while (n > 0)
-        {
-                result[i] = (n % 10) + '0';
-                n /= 10;
-                i -= 1;
-        }
-        result[digits] = '\0';
+	int	i;
+
+	i = digits - 1;
+	while (n > 0)
+	{
+		result[i] = (n % 10) + '0';
+		n /= 10;
+		i -= 1;
+	}
+	result[digits] = '\0';
+	return (result);
 }
+
 char	*ft_itoa(int n)
 {
 	int		i;
@@ -67,14 +71,7 @@ char	*ft_itoa(int n)
 		result[0] = '-';
 	if (c_digits(n) == 1)
 		result[i] = '0';
-	while (n > 0)
-	{
-		result[i] = (n % 10) + '0';
-		n /= 10;
-		i -= 1;
-	}
-	result[digits] = '\0';
-	return (result);
+	return (nbrtochar(result, n, digits));
 }
 
 /*#include <stdio.h>

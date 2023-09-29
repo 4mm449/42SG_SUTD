@@ -6,12 +6,11 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:22:28 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/20 13:10:31 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:11:14 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

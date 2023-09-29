@@ -6,7 +6,7 @@
 /*   By: aibn-muh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:45:39 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/09/28 12:00:45 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/09/29 10:55:56 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		n_node = ft_lstnew(set);
 		if (!n_node)
 		{
+			del(set);
 			ft_lstclear(&n_lst, del);
 			return (NULL);
 		}
