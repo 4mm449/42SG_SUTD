@@ -6,14 +6,14 @@
 /*   By: aibn-muh <aibn-muh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:51:12 by aibn-muh          #+#    #+#             */
-/*   Updated: 2023/10/04 11:51:16 by aibn-muh         ###   ########.fr       */
+/*   Updated: 2023/10/12 13:28:09 by aibn-muh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_putchar(char c, int *len)
+void	ft_putchar(unsigned int c, int *len)
 {
-    write(1, &c, 1);
-    len += 1;
+	write(1, &c, 1);
+	*len += 1;
 }
